@@ -1,0 +1,9 @@
+model:
+  base: "Gemma Nano"
+  local_model_path: null
+  fallback_mode: "template"
+generation:
+  max_words: 180
+  default_language: "English"
+  default_style: "grounding"
+  temperature: 0.7

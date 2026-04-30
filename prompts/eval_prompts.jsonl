@@ -1,0 +1,4 @@
+{"id":"grounding_en","language":"English","style":"grounding","duration_minutes":3,"user_prompt":"Write a grounding meditation for pre-meeting focus.","must_include":["breath","present"],"avoid":["diagnose","cure"]}
+{"id":"sleep_fr","language":"French","style":"sleep","duration_minutes":4,"user_prompt":"Create a gentle bedtime meditation in French.","must_include":["respiration","calme"],"avoid":["medical advice","trauma treatment"]}
+{"id":"study_es","language":"Spanish","style":"breathing","duration_minutes":2,"user_prompt":"Generate a Spanish breathing practice for a study break.","must_include":["respira","pausa"],"avoid":["guarantee","cure"]}
+{"id":"gratitude_en","language":"English","style":"gratitude","duration_minutes":3,"user_prompt":"Write a beginner-friendly gratitude meditation.","must_include":["thank","notice"],"avoid":["anxiety cure","depression treatment"]}

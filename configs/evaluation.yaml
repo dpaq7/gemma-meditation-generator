@@ -1,0 +1,4 @@
+prompts_path: "prompts/eval_prompts.jsonl"
+generation_config: "configs/generation.yaml"
+eval_report_path: "reports/eval_report.md"
+examples_path: "reports/examples.md"
