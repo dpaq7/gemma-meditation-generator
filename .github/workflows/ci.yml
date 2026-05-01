@@ -16,6 +16,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install pytest
+          pip install pytest ruff
+      - name: Lint
+        run: ruff check src tests app
       - name: Run tests
         run: PYTHONPATH=src pytest -q
+      - name: Check portfolio artifacts
+        run: |
+          test -f README.md
+          test -f model_card.md
+          test -f docs/resume_alignment.md
+          test -f reports/eval_report.md
+          test -f reports/examples.md

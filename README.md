@@ -1,24 +1,24 @@
 # Gemma Nano Guided Meditation Generator
 
-Fine-tuned and evaluated a lightweight generative AI model for guided meditation generation across languages and styles.
+Applied generative-AI prototype for guided meditation prompts, safety boundaries, and heuristic evaluation. The public repository runs with a deterministic template fallback and can be configured to use local Gemma-compatible weights outside git.
 
-**Hiring signal:** applied generative AI, fine-tuning documentation, evaluation harness, model card, safety limitations, user-facing demo.
+## Recruiter Summary
 
-## Current Status
+This project demonstrates practical applied-AI product thinking: prompt schema design, safety filtering, reproducible evaluation, model-card documentation, and a Streamlit demo. It does not claim public fine-tuning results because no training data, training logs, model weights, or fine-tuned checkpoint are committed.
 
-This repository is structured as a professional applied-AI project around the existing Gemma Nano meditation concept. The local code runs without private weights by using a transparent template fallback. If Gemma Nano model weights or an exported fine-tuned checkpoint are available, configure the path in `configs/generation.yaml`.
+## Problem
 
-## What It Demonstrates
+Wellness-generation apps need more than fluent text: they need clear scope, prompt controls, refusal boundaries, repeatable evaluation, and honest limitations. This repository builds those pieces around a guided meditation use case.
 
-- Prompt schema and documented evaluation set
-- Generation interface with configurable model path
-- Heuristic evaluation harness for relevance, language match, tone, safety, and repetition
-- Safety checks for medical claims, crisis advice, harmful instructions, and overpromising
-- Streamlit demo app
-- Model card and evaluation report
-- Pytest tests and GitHub Actions CI
+## Technical Stack
 
-## Quickstart
+- Python and PyYAML for configurable generation/evaluation
+- pytest for prompt-schema and safety-check tests
+- Streamlit for a local demo interface
+- Markdown model card and evaluation reports
+- GitHub Actions CI
+
+## Reproducible Quickstart
 
 ```bash
 make setup
@@ -32,13 +32,16 @@ Optional demo:
 streamlit run app/streamlit_app.py
 ```
 
-## Evaluation
+## Metrics and Results
 
-Run:
+The committed evaluation report uses the deterministic fallback generator and a small synthetic prompt set. Current smoke-test results:
 
-```bash
-make evaluate
-```
+- 4 prompt scenarios evaluated.
+- 4 of 4 prompts passed the safety check.
+- 4 of 4 prompts matched the requested language.
+- Relevance scores: 1.00, 1.00, 1.00, and 0.50.
+- Tone consistency scores: 1.00 for all 4 prompts.
+- Repetition rates ranged from 0.07 to 0.22.
 
 The evaluation reads `prompts/eval_prompts.jsonl`, generates outputs, scores heuristic criteria, and writes:
 
@@ -47,6 +50,15 @@ The evaluation reads `prompts/eval_prompts.jsonl`, generates outputs, scores heu
 
 These heuristic scores are intended for portfolio documentation and regression checks. They are not a substitute for human review by qualified meditation, wellness, or safety reviewers.
 
+## Screenshots and Report Links
+
+- [Evaluation report](reports/eval_report.md)
+- [Generated examples](reports/examples.md)
+- [Model card](model_card.md)
+- [Evaluation prompts](prompts/eval_prompts.jsonl)
+- [Sample prompts](prompts/sample_prompts.md)
+- [Resume alignment notes](docs/resume_alignment.md)
+
 ## Safety Boundaries
 
 The generator is for general wellness and relaxation text only. It should not provide medical advice, crisis counseling, trauma treatment, diagnosis, or instructions for harm. If a prompt asks for crisis support, medical guidance, or harmful action, the app returns a boundary message.
@@ -54,6 +66,7 @@ The generator is for general wellness and relaxation text only. It should not pr
 ## Limitations
 
 - No private model weights or training data are committed.
-- The fallback generator is deterministic template logic, not a replacement for Gemma Nano.
+- The public repository does not include evidence of fine-tuning, training runs, or benchmarked model quality.
+- The fallback generator is deterministic template logic, not a replacement for a deployed neural model.
 - Heuristic evaluation is useful for smoke testing but cannot validate clinical appropriateness.
 - The project does not claim measured therapeutic benefit.

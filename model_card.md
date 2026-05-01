@@ -3,13 +3,15 @@
 ## Model Details
 
 - Project: Gemma Nano Guided Meditation Generator
-- Base model: Gemma Nano, when configured locally
-- Current runnable mode: deterministic template fallback unless `configs/generation.yaml` points to local model weights
+- Base model: Gemma-compatible local weights may be configured outside git
+- Current runnable mode: deterministic template fallback unless `configs/generation.yaml` points to local weights
 - Task: guided meditation generation across language and style prompts
 
-## Training and Fine-Tuning Approach
+## Training Evidence
 
-The repository is prepared to document a fine-tuned Gemma Nano meditation workflow, but no private weights, training data, or unverified fine-tuning artifacts are committed. Any future fine-tuning run should record:
+No training data, training logs, model weights, or fine-tuned checkpoint are committed to this public repository. The current evidence supports claims about prompt schema design, safety checks, template fallback behavior, and heuristic smoke evaluation only.
+
+Any future fine-tuning or local model-adaptation run should record:
 
 - base checkpoint
 - dataset source and license
@@ -51,6 +53,6 @@ Run `make evaluate` to generate the latest heuristic evaluation report. Current 
 ## Risks and Limitations
 
 - Wellness text can be misinterpreted as clinical advice.
-- Template fallback output is not representative of a fine-tuned neural model.
+- Template fallback output is not representative of a deployed neural model.
 - Heuristic scoring can miss subtle unsafe or low-quality outputs.
 - Human review is required before any real deployment.
